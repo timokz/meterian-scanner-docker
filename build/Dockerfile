@@ -206,6 +206,9 @@ RUN python3 -m venv /usr/lib/pythonEnvs/forPoetry \
 RUN pip install uv
 
 
+# Support for font analysis
+RUN min-apk-add woff2 fontforge
+
 # Adding shadow to allow the meterian user creation with uid/gid matching host see https://github.com/MeterianHQ/meterian-scanner-docker/issues/19
 RUN min-apk-add shadow
 
