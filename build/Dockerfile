@@ -209,12 +209,12 @@ RUN pip install uv
 # Support for font analysis
 RUN min-apk-add woff2
 RUN min-apk-add build-base autoconf automake libtool
-RUN git clone https://github.com/umanwizard/libeot.git
-RUN cd libeot
-RUN autoreconf -i
-RUN ./configure
-RUN make && make install
-RUN cd .. && rm -r libeot
+RUN git clone https://github.com/umanwizard/libeot.git \
+ && cd libeot \
+ && autoreconf -i \
+ && ./configure \
+ && make && make install \
+ && cd .. && rm -r libeot
 
 
 # Adding shadow to allow the meterian user creation with uid/gid matching host see https://github.com/MeterianHQ/meterian-scanner-docker/issues/19
